@@ -1,12 +1,13 @@
 from pyrogram import Client, enums
 from pyrogram.types import InlineQueryResultArticle, InputTextMessageContent
-from addons.gangsta import gangstafy
+from addons.gangsta import gangstafy # Star https://github.com/SouravJohar/gangsta
 from addons.urlprev import urlformat, uri_validator
+import PyBypass as bypasser # Star https://github.com/sanjit-sinha/PyBypass
 
 
 '''===========EDITABLES==========='''
 
-queries = ["gangsta", "uf", "urlprev"] # Append any more inline query prefixes here
+queries = ["gangsta", "uf", "urlprev", "bypass"]
 
 '''-------------------------------'''
 
@@ -19,7 +20,8 @@ async def inlineQHandler(_, queryObj):
 
   # gangsta
   if query.split()[0]==queries[0]:
-    oText = query.split(maxsplit=1)[1]
+    try: oText = query.split(maxsplit=1)[1]
+    except: return
     gText = gangstafy(oText)
     results.append(
       InlineQueryResultArticle(
@@ -30,7 +32,8 @@ async def inlineQHandler(_, queryObj):
 
   # uf
   if query.split()[0]==queries[1]:
-    text = query.split(maxsplit=1)[1]
+    try: text = query.split(maxsplit=1)[1]
+    except: return
     disablePrev=text.endswith("~")
     if disablePrev:text=text[:-1]
     results.append(
@@ -42,7 +45,8 @@ async def inlineQHandler(_, queryObj):
 
   # urlprev
   if query.split()[0]==queries[2]:
-    query = query.split(maxsplit=1)[1]
+    try: query = query.split(maxsplit=1)[1]
+    except: return
     if len(query.split('|||'))==2:
       elements = [x.strip() for x in query.split('|||')]
       txt = elements[0]
@@ -62,8 +66,19 @@ async def inlineQHandler(_, queryObj):
           )
         )
 
-  # new_query
-  # if query.split()[0]==queries[Index_Of_Your_Query]:
-  #   results.append(Results_of_the_query)
+  # bypass
+  if query.split()[0]==queries[3]:
+    try: link = query.split(maxsplit=1)[1]
+    except: return
+    disablePrev=link.endswith("~")
+    if disablePrev:link=link[:-1]
+    try: url = bypasser.bypass(link)
+    except: url = 0
+    results.append(
+      InlineQueryResultArticle(
+        title="Send bypassed link" if url else "Unable to bypass this link :/",
+        input_message_content=InputTextMessageContent(url if url else ":/", disable_web_page_preview=disablePrev)
+      )
+    )
 
   await queryObj.answer(results, cache_time=1)

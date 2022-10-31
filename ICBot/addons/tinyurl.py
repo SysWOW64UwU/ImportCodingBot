@@ -26,11 +26,11 @@ async def tinyurl(_, message):
   msg = message.text
   tinied = ""
   if len(msg.split())>1:
-      rep = await message.reply("Processing...")
-      arguments = [x.strip() for x in msg.partition(msg.split()[0])[-1].strip().split(',')]
-      for count, argument in enumerate(arguments, 1):
-        url = make_tiny(argument)
-        tinied += F"{count}. `{url}`\n"
-      await rep.delete()
-      await message.reply(tinied)
+    rep = await message.reply("Processing...")
+    arguments = [x.strip() for x in msg.partition(msg.split()[0])[-1].strip().split(',')]
+    for count, argument in enumerate(arguments, 1):
+      url = make_tiny(argument)
+      tinied += F"{count}. `{url}`\n"
+    await rep.delete()
+    await message.reply(tinied)
   else: return await message.reply(F"Usage:\n`{HELP}`", quote = 1)
