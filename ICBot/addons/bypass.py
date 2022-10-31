@@ -12,7 +12,8 @@ HELP = F"""Provide comma separated shortened URL(s) as an argument to this comma
 
 Inline Usage:
 Provide a single URL in inline mode (this is due to Telegram's inline character limit)
-{os.getenv('BOT_UNAME')} {cmds[0]} URL"""
+{os.getenv('BOT_UNAME')} {cmds[0]} URL
+You may end the message with a 'tilde' symbol to disable web preview"""
 
 '''-------------------------------'''
 
