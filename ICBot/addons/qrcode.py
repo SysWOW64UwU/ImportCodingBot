@@ -8,10 +8,10 @@ import json
 
 preFix = "/"
 cmds = ["qr", F"qr{os.getenv('BOT_UNAME')}"]
-HELP = F"""Provide comma separated URLs as the argument to this command
-{preFix if preFix else os.getenv('MASTER_PREFIX', '/')}{cmds[0]} url1, [url2, ...] - converts the given URLs to rebrandly QR code links
+HELP = F"""Provide comma separated URLs as an argument to this command
+{preFix if preFix else os.getenv('MASTER_PREFIX', '/')}{cmds[0]} url1, [url2, ...] - converts the given URL(s) to rebrandly QR code link(s)
 
-You may remove the '.qr' from the end of the resulting links to use them as shortened rebrandly links"""
+You may remove the '.qr' from the end of the resulting link(s) to use them as shortened rebrandly link(s)"""
 
 '''-------------------------------'''
 

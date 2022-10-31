@@ -8,8 +8,8 @@ import requests
 
 preFix = "/"
 cmds = ["tiny", F"tiny{os.getenv('BOT_UNAME')}"]
-HELP = F"""Provide comma separated URLs as the argument to this command
-{preFix if preFix else os.getenv('MASTER_PREFIX', '/')}{cmds[0]} url1, [url2, ...] - converts the given URLs to tinyurl links"""
+HELP = F"""Provide comma separated URL(s) as an argument to this command
+{preFix if preFix else os.getenv('MASTER_PREFIX', '/')}{cmds[0]} url1, [url2, ...] - converts the given URL(s) to tinyurl link(s)"""
 
 '''-------------------------------'''
 
