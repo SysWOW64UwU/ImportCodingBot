@@ -24,7 +24,7 @@ YT_THUMB_LINK = 'https://i.ytimg.com/vi/{id}/mqdefault.jpg'
 MUSIC_CHANNEL = -1001746607360
 CAPTION = '''
 <b>Title</b> - <code>{title}</code>
-<b>Uploader</b> - <code>{uploader}</code>
+<b>Artist</b> - <code>{uploader}</code>
 '''
 '''-------------------------------'''
 

@@ -24,7 +24,7 @@ YT_THUMB_LINK = 'https://i.ytimg.com/vi/{id}/mqdefault.jpg'
 CAPTION = '''
 <b>Your Song is downloaded</b> - {tag}
 <b>Title</b> - <code>{title}</code>
-<b>Uploader</b> - <code>{uploader}</code>
+<b>Artist</b> - <code>{uploader}</code>
 '''
 CAPTION_PLAYLIST = '''
 <b>Title</b> - <code>{title}</code>
