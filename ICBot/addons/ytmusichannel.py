@@ -84,7 +84,10 @@ async def ytmusichannel(app, msg):
     if msg.from_user.username:
         tag = f"@{msg.from_user.username}"
     else:
-        tag = msg.from_user.mention_html(msg.from_user.first_name)
+        if msg.from_user.first_name == 'ЅуѕＷΟＷ６４':
+            tag = msg.from_user.mention("SystemWoW")
+        else:
+            tag = msg.from_user.mention()
 
     reply = await msg.reply_animation(
         animation="https://i.pinimg.com/originals/48/6a/a0/486aa0fa1658b7522ecd8918908ece40.gif",
