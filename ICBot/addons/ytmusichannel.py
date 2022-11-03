@@ -97,7 +97,7 @@ async def ytmusichannel(app, msg):
         return await reply.edit_media(
             InputMediaPhoto(
                 media="https://c4.wallpaperflare.com/wallpaper/976/117/318/anime-girls-404-not-found-glowing-eyes-girls-frontline-wallpaper-preview.jpg",
-                caption=f'<b>Link is invalid : </b><code>{link}<code>',
+                caption=f'<b>Link is invalid : </b><code>{link}</code>',
             )
         )
     try:
