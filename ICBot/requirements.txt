@@ -7,3 +7,4 @@ psutil
 lxml
 beautifulsoup4
 Pillow
+yt-dlp
