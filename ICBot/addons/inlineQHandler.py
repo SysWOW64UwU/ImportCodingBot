@@ -81,4 +81,8 @@ async def inlineQHandler(_, queryObj):
       )
     )
 
+  # new_query
+  # if query.split()[0]==queries[Index_Of_Your_Query]:
+  #   results.append(Results_of_the_query)
+  
   await queryObj.answer(results, cache_time=1)
