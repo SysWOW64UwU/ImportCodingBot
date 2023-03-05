@@ -2,7 +2,7 @@ pyrogram
 tgcrypto
 requests
 deta
-dotenv
+python-dotenv
 psutil
 lxml
 beautifulsoup4
